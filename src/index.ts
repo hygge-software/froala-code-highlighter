@@ -1,9 +1,9 @@
 declare var FroalaEditor: any;
 import * as shiki from 'shiki';
-import '../icon/index.css';
-
 const CDN = 'https://unpkg.com/shiki/';
-declare type StringLiteralUnion<T extends U, U = string> = T | (U & {});
+
+import * as svg from '../icon/ico.svg';
+
 const { error } = console;
 
 class IntegrationModel {
@@ -13,7 +13,7 @@ class IntegrationModel {
 
   constructor() {
     this.highlighter = null;
-    this.defaultLangList = ['js'];
+    this.defaultLangList = ['js', 'ruby'];
     this.defaultTheme = 'min-light';
     shiki.setCDN(CDN);
     this.createHighlighter();
@@ -46,7 +46,7 @@ class IntegrationModel {
     function highlight() {
       const selection = editor.selection.get();
       try {
-        let html = integrationModel.codeToHtml(selection.toString(), 'js');
+        let html = integrationModel.codeToHtml(selection.toString(), 'ruby');
         html = editor.clean.html(html);
         editor.html.insert(html);
         editor.html.unwrap();
@@ -59,11 +59,8 @@ class IntegrationModel {
     return { highlight, _init };
   };
 
-  FroalaEditor.DefineIconTemplate(
-    'highlightCodePlugin',
-    '<i style="background: url("../icon/ico.svg")" class="icon icon-[NAME]"></i>',
-  );
-  FroalaEditor.DefineIcon('highlightCode', { NAME: 'highlight-code', template: 'highlightCodePlugin' });
+  FroalaEditor.DefineIconTemplate('highlightCodePlugin', '[SVG]');
+  FroalaEditor.DefineIcon('highlightCode', { SVG: svg, template: 'highlightCodePlugin' });
   FE.RegisterCommand('highlightCode', {
     title: 'Highlight your code',
     undo: true,

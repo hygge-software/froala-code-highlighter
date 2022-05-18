@@ -1,1 +1,1 @@
-import '../icon/index.css';
+export {};

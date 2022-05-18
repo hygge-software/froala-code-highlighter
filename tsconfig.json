@@ -7,6 +7,6 @@
     "strict": true,
     "resolveJsonModule": true
   },
-  "include": ["src"],
+  "include": ["src", "icon"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }

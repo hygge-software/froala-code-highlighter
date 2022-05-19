@@ -30,6 +30,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "program-language-detector": "^0.0.12",
     "shiki": "^0.10.1"
   }
 }

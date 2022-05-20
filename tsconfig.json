@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2020",
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
     "resolveJsonModule": true
   },
-  "include": ["src", "icon"],
+  "include": ["src", "types"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }

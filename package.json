@@ -27,7 +27,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "author": "",
+  "author": "Hygge Software",
   "license": "MIT",
   "devDependencies": {
     "prettier": "^2.6.2",

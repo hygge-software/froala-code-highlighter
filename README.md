@@ -8,7 +8,7 @@ Syntax highlighter tool based on [Shiki](https://github.com/shikijs/shiki/tree/m
 
 - [Requirements](#requirements)
 - [Install instructions](#install-instructions)
-  - [General installation instructions](#general-installation-instructions) 
+  - [General installation instructions](#general-installation-instructions)
   - [Angular installation instructions](#angular-installation-instructions)
   - [ReactJS installation instructions](#reactjs-installation-instructions)
 - [Documentation](#documentation)
@@ -221,4 +221,79 @@ reportWebVitals();
 
 ## Documentation
 
+Default theme:
 
+```ts
+'min-light';
+```
+
+Themes:
+
+```ts
+export type Theme =
+  | 'css-variables'
+  | 'dark-plus'
+  | 'dracula-soft'
+  | 'dracula'
+  | 'github-dark-dimmed'
+  | 'github-dark'
+  | 'github-light'
+  | 'hc_light'
+  | 'light-plus'
+  | 'material-darker'
+  | 'material-default'
+  | 'material-lighter'
+  | 'material-ocean'
+  | 'material-palenight'
+  | 'min-dark'
+  | 'min-light'
+  | 'monokai'
+  | 'nord'
+  | 'one-dark-pro'
+  | 'poimandres'
+  | 'rose-pine-dawn'
+  | 'rose-pine-moon'
+  | 'rose-pine'
+  | 'slack-dark'
+  | 'slack-ochin'
+  | 'solarized-dark'
+  | 'solarized-light'
+  | 'vitesse-dark'
+  | 'vitesse-light';
+```
+
+Programming Languages:
+
+```ts
+export type Lang =
+  | 'javascript'
+  | 'js'
+  | 'typescript'
+  | 'c'
+  | 'c++'
+  | 'python'
+  | 'ruby'
+  | 'php'
+  | 'go'
+  | 'java'
+  | 'html'
+  | 'css';
+```
+
+To change theme you need to call `createHighlighter` method on editor object
+
+```ts
+createHighlighter(langs: Lang[], theme: StringLiteralUnion<Theme>): Promise<void>;
+```
+
+Example
+
+```ts
+const config = {
+  events: {
+    initialized() {
+      this.syntaxHighlighter.createHighlighter(['javascript', 'ruby'], 'github-light');
+    },
+  },
+};
+```

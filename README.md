@@ -95,7 +95,7 @@ import "froala-editor/js/plugins.pkgd.min.js";
 // Expose FroalaEditor instance to window.
 declare const require: any;
 (window as any).FroalaEditor = require("froala-editor");
-require("froala-syntax-highlighter/lib"); // Import WIRIS Mathtype formula editor.
+require("froala-syntax-highlighter/lib"); // Import plugin.
 
 // Import Angular plugin.
 import {

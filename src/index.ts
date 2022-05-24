@@ -63,7 +63,9 @@ namespace FroalaCodeHighlighter {
         this.highlighter = await shiki.getHighlighter({ langs, theme });
         this.loadedLanguages = langs;
       } catch (e: any) {
-        error(`Can't create highlighter object - ${e}`);
+        if (error) {
+          error(`Can't create highlighter object - ${e}`);
+        }
       }
     }
   }
@@ -77,7 +79,7 @@ namespace FroalaCodeHighlighter {
 
     public createPlugin(): void {
       const { integrationModel } = this;
-      this.fe.PLUGINS.syntaxHighlighter = function ({ clean, html, selection, $el }: EditorObject) {
+      this.fe.PLUGINS.syntaxHighlighter = function ({ clean, html, selection, $el }: EditorObject): CustomPlugin {
         return {
           _init: () => {},
           highlight: async () => {
@@ -97,7 +99,9 @@ namespace FroalaCodeHighlighter {
               const [froalaEl] = $el.get();
               integrationModel.cleanEmpty(froalaEl);
             } catch (e: any) {
-              error(e);
+              if (error) {
+                error(e);
+              }
             }
           },
           createHighlighter: async (langs: shiki.Lang[], theme: StringLiteralUnion<shiki.Theme>) => {
@@ -115,7 +119,7 @@ namespace FroalaCodeHighlighter {
           await (<EditorObject>this).syntaxHighlighter.highlight();
         },
       });
-      this.fe.RegisterShortcut(70, 'highlightCode', 'F', 'F', false);
+      this.fe.RegisterShortcut(70, 'highlightCode', {});
     }
   }
 }

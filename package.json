@@ -10,7 +10,7 @@
     "shiki",
     "syntaxHighlighter",
     "codeHighlighter",
-    "detectProgramingLanguage"
+    "detectProgrammingLanguage"
   ],
   "repository": "https://github.com/hygge-software/froala-code-highlighter",
   "bugs": {

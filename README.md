@@ -43,12 +43,11 @@ Syntax highlighter tool based on [Shiki](https://github.com/shikijs/shiki/tree/m
     // Enable the plugin.
     pluginsEnabled: ['syntaxHighlighter'],
 
-    // Add the buttons to the toolbar and image edit buttons
+    // Add the buttons to the toolbar
     toolbarButtons:   ['highlightCode'],
     toolbarButtonsMD: ['highlightCode'],
     toolbarButtonsSM: ['highlightCode'],
     toolbarButtonsXS: ['highlightCode'],
-    imageEditButtons: ['highlightCode'],
   })
   ```
 

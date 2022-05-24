@@ -197,7 +197,7 @@ import FroalaEditorComponent from 'react-froala-wysiwyg';
 import 'froala-editor/js/plugins.pkgd.min.js';
 
 window.FroalaEditor = require('froala-editor');
-// Load wiris mathtype-froala plugin.
+// Load Syntax Highlighter -froala plugin.
 require('froala-syntax-highlighter');
 
 const froalaConfig = {

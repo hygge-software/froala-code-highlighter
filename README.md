@@ -8,13 +8,15 @@ Syntax highlighter tool based on [Shiki](https://github.com/shikijs/shiki/tree/m
 
 - [Requirements](#requirements)
 - [Install instructions](#install-instructions)
-- [Services](#services)
+  - [General installation instructions](#general-installation-instructions) 
+  - [Angular installation instructions](#angular-installation-instructions)
+  - [ReactJS installation instructions](#reactjs-installation-instructions)
 - [Documentation](#documentation)
 
 ## Requirements
 
-- **npm** (_> v6.13.4_)
-- **froala** (_>= 3_)
+- **npm** (\_v6+)
+- **froala** (_v3+_)
 
 ## Install instructions
 
@@ -59,6 +61,12 @@ Syntax highlighter tool based on [Shiki](https://github.com/shikijs/shiki/tree/m
   ```
 
 ### Angular installation instructions
+
+#### Requirements
+
+- **npm** (\_v6+)
+- **froala** (_v3+_)
+- **Angular** (_v9+_)
 
 1. Run the following through the terminal
 
@@ -138,3 +146,79 @@ export class AppComponent {
   };
 }
 ```
+
+5. Open src/app/app.component.html and replace all with:
+
+```html
+<h1>Angular and Froala demo</h1>
+<!-- Pass options and content to the component. -->
+<div id="editor" [froalaEditor]="options" [(froalaModel)]="content"></div>
+```
+
+6. Finally, run the development server to initialize the Froala editor.
+
+```bash
+ng serve
+```
+
+### ReactJS installation instructions
+
+#### Requirements
+
+- **npm** (\_v6+)
+- **froala** (_v3+_)
+- **create-react-app** (_v3+_)
+
+1. Run the following through the terminal
+
+```bash
+create-react-app $APP_NAME
+# Notice that **$APP_NAME** needs to be replaced by the name that you choose.
+
+cd $APP_NAME
+
+npm install react-froala-wysiwyg --save
+
+npm install froala-syntax-highlighter --save
+```
+
+2. Replace all content in `src/index.js` by:
+
+```js
+// Load react default libraries.
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+// Load Froala Editor scripts and styles.
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import FroalaEditorComponent from 'react-froala-wysiwyg';
+import 'froala-editor/js/plugins.pkgd.min.js';
+
+window.FroalaEditor = require('froala-editor');
+// Load wiris mathtype-froala plugin.
+require('froala-syntax-highlighter');
+
+const froalaConfig = {
+  pluginsEnabled: ['syntaxHighlighter'],
+  toolbarButtons: ['highlightCode'],
+};
+
+// Set the initial content.
+const content = '<p class="text">const hello = "hello"/p>';
+
+ReactDOM.render(
+  <FroalaEditorComponent tag="div" config={froalaConfig} model={content} />,
+  document.getElementById('root'),
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+reportWebVitals();
+```
+
+## Documentation
+
+

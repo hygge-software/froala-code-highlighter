@@ -1,3 +1,12 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"]
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "no-namespace": false,
+    "max-classes-per-file": false,
+    "only-arrow-functions": false,
+    "object-literal-shorthand": false,
+    "no-empty": false,
+    "no-angle-bracket-type-assertion": false,
+    "no-unused-expression": false
+  }
 }

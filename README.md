@@ -2,7 +2,7 @@
 
 Syntax highlighter tool based on [Shiki](https://github.com/shikijs/shiki/tree/main/packages/shiki) with programming language detection in the **Froala editor**. This package is compatible with Froala editor versions 3 and 4.
 
-![img.png](img.png)
+![https://cloudse1.seupload.com/cache/plugins/filepreviewer/41051/b954b6a7038cef46998d2e82d9f30d6e049ccbc172f20c52cc585a024e84b42c/1100x800_cropped.jpg](img.png)
 
 ## Table of Contents
 

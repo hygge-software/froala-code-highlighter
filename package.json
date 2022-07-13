@@ -1,6 +1,6 @@
 {
   "name": "froala-syntax-highlighter",
-  "version": "0.0.2-3",
+  "version": "0.0.2-4",
   "description": "Syntax highlighter for Froala with auto detection programming language",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

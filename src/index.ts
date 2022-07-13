@@ -86,9 +86,9 @@ namespace FroalaCodeHighlighter {
             try {
               const content: string = selection.get().toString();
               const detectedLang: LangKey = detect(content) as LangKey;
-              const lang = LANG_TYPES[detectedLang as LangKey].toLowerCase();
+              let lang = LANG_TYPES[detectedLang as LangKey].toLowerCase();
               if (lang === LANG_TYPES.Unknown.toLowerCase()) {
-                return;
+                lang = LANG_TYPES.JavaScript.toLowerCase();
               }
 
               let htmlContent = await integrationModel.codeToHtml(content, lang as shiki.Lang);
